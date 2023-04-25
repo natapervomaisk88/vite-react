@@ -1,19 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Message from "./components/Message";
-
-function Test() {
-  return React.createElement(
-    "p",
-    {
-      id: "my-p",
-    },
-    "Hello React",
-    React.createElement("button", { disabled: "true" }, "OK")
-  );
-}
+import Service from "./components/Service";
+import Car from "./components/Car";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -30,6 +21,7 @@ function App() {
       </div>
       <h1>{import.meta.env.VITE_APP_TITLE}</h1>
       <div className="card">
+        <Car />
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
@@ -37,7 +29,8 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
-      <Message />
+      <Message data={count} text="I am Message Component" />
+      <Service newtext="I am Sevice Component" />
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
@@ -45,4 +38,4 @@ function App() {
   );
 }
 
-export { App, Test };
+export { App };
