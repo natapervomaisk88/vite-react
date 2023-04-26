@@ -5,13 +5,15 @@ import "./App.css";
 import Message from "./components/Message";
 import Service from "./components/Service";
 import Car from "./components/Car";
+import Menu from "./components/Menu";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <div>
+      <Menu />
+      {/* <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -30,10 +32,9 @@ function App() {
         </p>
       </div>
       <Message data={count} text="I am Message Component" />
-      <Service newtext="I am Sevice Component" />
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p>
+      </p> */}
     </>
   );
 }
