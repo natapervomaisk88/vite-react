@@ -6,13 +6,16 @@ import Message from "./components/Message";
 import Service from "./components/Service";
 import Car from "./components/Car";
 import Menu from "./components/Menu";
+import Counter from "./components/Counter";
+import Form from "./components/Form";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <Menu />
+      <Form />
+      {/* <Menu /> */}
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
