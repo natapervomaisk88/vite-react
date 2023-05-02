@@ -6,31 +6,28 @@ const schemaValidate = yup.object({
   email: yup.string().email("Ivalid email").required("Email is empty"),
 });
 
-const init = () => {
-  return {
-    name: "",
-    email: "",
-  };
+const validate = (values: any) => {
+  const errors = { name: "", email: "" };
+  if (!values.name) {
+    errors.name = "Required (no name)";
+  }
+  if (!values.email) {
+    errors.email = "Required (no email)";
+  }
+  return errors;
 };
-
+const initialValues = {
+  name: "",
+  email: "",
+};
+const onSubmit = (data: any) => {
+  console.log(data); //отправка данных
+};
 const Form = () => {
   const formik = useFormik({
-    initialValues: init(),
-    onSubmit: (data) => {
-      console.log(data); //отправка данных
-    },
+    initialValues,
+    onSubmit,
     validationSchema: schemaValidate,
-    //Реализация валидации без yup
-    // validate: (values) => {
-    //   const errors = {};
-    //   if (!values.name) {
-    //     errors.name = "Required (no name)";
-    //   }
-    //   if (!values.email) {
-    //     errors.email = "Required (no email)";
-    //   }
-    //   return errors;
-    // },
   });
 
   return (
