@@ -7,14 +7,14 @@ import Service from "./components/Service";
 import Car from "./components/Car";
 import Menu from "./components/Menu";
 import Counter from "./components/Counter";
-import Form from "./components/Form";
+import NewForm from "./components/NewForm";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <Form />
+      <NewForm />
       {/* <Menu /> */}
       {/* <div>
         <a href="https://vitejs.dev" target="_blank">
